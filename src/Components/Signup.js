@@ -46,6 +46,7 @@ export default class Signup extends Component {
   }
 
   handleSubmit = (e) => {
+    e.preventDefault()
     console.log(this.state)
     if (this.state.passwordConfirmed === true ) {
       console.log('Password confirmed')
