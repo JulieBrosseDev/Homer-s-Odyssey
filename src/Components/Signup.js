@@ -47,11 +47,12 @@ export default class Signup extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state)
+    console.log(JSON.stringify(this.state,1,1))
     if (this.state.passwordConfirmed === true ) {
       console.log('Password confirmed')
+      alert('Congrates...you are able to connect!')
     } else {
-      console.log('Needs password confirmation')
+      alert('Password Confirmation not correct')
     }
   }
 
@@ -63,7 +64,7 @@ export default class Signup extends Component {
           <h1>last name :{this.state.lastname }</h1>
 
         
-        <form onClick={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
           <input type="email" placeholder="email" onChange={this.updateEmailField} />
           <input type="password" placeholder="password" onChange={this.updatePasswordField} />
           <input type="password" placeholder="password confirmation" onChange={this.checkPasswordConfirmation} />
